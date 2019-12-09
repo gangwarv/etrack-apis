@@ -14,12 +14,6 @@ using eTrackModels.Models;
 
 namespace eTrackApis.Controllers
 {
-    public class Res
-    {
-        public int Id { get; set; }
-        [Column("Full Name")]
-        public string FullName { get; set; }
-    }
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -66,11 +60,6 @@ namespace eTrackApis.Controllers
         // POST api/values
         public HttpResponseMessage Post(string photo)
         {
-            if (photo != null)
-            {
-                HttpFile.SaveBase64Image(photo, "D://Content//", "t.jpg");
-                return Request.CreateResponse("Success");
-            }
             return Request.CreateResponse("Failed");
         }
 
