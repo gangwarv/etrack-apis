@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TPN_CRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="PPC_PRODUCT_MAST_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_APP_FETCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P_COMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_CENT_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_SCM_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_STATE_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_CITY_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_TYPE_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_LOCATION_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_DISTRIBUTOR_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_USER_ID" Type="varchar" Mode="In" />
+          <Parameter Name="P_FROM_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="P_TO_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="P_REPORT_TYPE" Type="varchar" Mode="In" />
+          <Parameter Name="P_EXTRA" Type="varchar" Mode="In" />
+          <Parameter Name="P_EXTRA1" Type="varchar" Mode="In" />
+          <Parameter Name="P_EXTRA2" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_APP_LOGINUSER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PUSERNAME" Type="varchar" Mode="In" />
+          <Parameter Name="PPASSWORD" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_APP_NEW_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="P_COMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_CENT_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_SCM_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_STATE_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_CITY_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_TYPE_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_LOCATION_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_DISTRIBUTOR_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_DIST_PRODUCT" Type="varchar(max)" Mode="In" />
+          <Parameter Name="P_DIST_REMARKS" Type="varchar" Mode="In" />
+          <Parameter Name="P_CLIENT_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_CLIENT_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="P_MOBILE" Type="varchar" Mode="In" />
+          <Parameter Name="P_VISIT_STATUS" Type="varchar" Mode="In" />
+          <Parameter Name="P_ADDR1" Type="varchar" Mode="In" />
+          <Parameter Name="P_ADDR2" Type="varchar" Mode="In" />
+          <Parameter Name="P_NEXT_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="P_PAY_MODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_CHEQUE_NO" Type="varchar" Mode="In" />
+          <Parameter Name="P_CHEQUE_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="P_BANK_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="P_BANK_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="P_AMOUNT" Type="numeric" Mode="In" />
+          <Parameter Name="P_CLIENT_PRODUCT" Type="varchar(max)" Mode="In" />
+          <Parameter Name="P_PHOTO_PATH" Type="varchar" Mode="In" />
+          <Parameter Name="P_ORDER_Y_N" Type="varchar" Mode="In" />
+          <Parameter Name="P_REMARKS" Type="varchar" Mode="In" />
+          <Parameter Name="P_EMI" Type="varchar" Mode="In" />
+          <Parameter Name="P_CREATED_BY" Type="varchar" Mode="In" />
+          <Parameter Name="P_EXTRA" Type="varchar" Mode="In" />
+          <Parameter Name="P_EXTRA1" Type="varchar" Mode="In" />
+          <Parameter Name="P_EXTRA2" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_BANK_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SCM_BIND_LOCTION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PCENT_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PLOC_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PLOC_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA1" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA2" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA3" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_BIND_SHOP_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PCITY" Type="varchar" Mode="In" />
+          <Parameter Name="PLOCATION" Type="varchar" Mode="In" />
+          <Parameter Name="PTYPE" Type="varchar" Mode="In" />
+          <Parameter Name="PNAME" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA1" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA2" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA3" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA4" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_BINDCITYF2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pcountry" Type="varchar" Mode="In" />
+          <Parameter Name="pcity" Type="varchar" Mode="In" />
+          <Parameter Name="Pstate_code" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_LOCATION_MASTINSUPDDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PLOC_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="CITY_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PLOC_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="PREMARKS" Type="varchar" Mode="In" />
+          <Parameter Name="PSTATUS" Type="varchar" Mode="In" />
+          <Parameter Name="PIP" Type="varchar" Mode="In" />
+          <Parameter Name="PCREATED_BY" Type="varchar" Mode="In" />
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_NUM_GEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SCM_RET_TYPE_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_SCM_VISIT_STATUS_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_SEL_PROD_TYPE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PCENT_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PPROD_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PPROD_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA1" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA2" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA3" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_SHOPKEEPER_MAST_INSUPDDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PSHOP_TYPE" Type="varchar" Mode="In" />
+          <Parameter Name="PDISTSHOP_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="PSALES_C_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PSHOP_KEEP_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PSHOP_KEEP_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="PSHOP_KEEP_NICK" Type="varchar" Mode="In" />
+          <Parameter Name="PADD1" Type="varchar" Mode="In" />
+          <Parameter Name="PCITY_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PADD2" Type="varchar" Mode="In" />
+          <Parameter Name="PLOCATION_CODE" Type="varchar" Mode="In" />
+          <Parameter Name="PEMAIL_ID" Type="varchar" Mode="In" />
+          <Parameter Name="PPHONE" Type="varchar" Mode="In" />
+          <Parameter Name="PMOBILE" Type="varchar" Mode="In" />
+          <Parameter Name="PREMARKS" Type="varchar" Mode="In" />
+          <Parameter Name="PSTATUS" Type="varchar" Mode="In" />
+          <Parameter Name="PSTATUS_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="PEXTRA1" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA2" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA3" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA4" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA5" Type="varchar" Mode="In" />
+          <Parameter Name="IP" Type="varchar" Mode="In" />
+          <Parameter Name="PUSERID" Type="varchar" Mode="In" />
+          <Parameter Name="PTYPE" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_STATE_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PSTATE_NAME" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCM_USER_MAST_INSUPDDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserCode" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="UserType" Type="varchar" Mode="In" />
+          <Parameter Name="UserFname" Type="varchar" Mode="In" />
+          <Parameter Name="UserLname" Type="varchar" Mode="In" />
+          <Parameter Name="Userpassword" Type="varchar" Mode="In" />
+          <Parameter Name="pagency" Type="varchar" Mode="In" />
+          <Parameter Name="pdeptcode" Type="varchar" Mode="In" />
+          <Parameter Name="pbranch" Type="varchar" Mode="In" />
+          <Parameter Name="pdateformat" Type="varchar" Mode="In" />
+          <Parameter Name="defcomp" Type="varchar" Mode="In" />
+          <Parameter Name="lstcomp" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="prole" Type="varchar" Mode="In" />
+          <Parameter Name="pstatus" Type="varchar" Mode="In" />
+          <Parameter Name="pbranchper" Type="varchar" Mode="In" />
+          <Parameter Name="pcompanyname" Type="varchar" Mode="In" />
+          <Parameter Name="pcompagen" Type="varchar" Mode="In" />
+          <Parameter Name="Userid" Type="varchar" Mode="In" />
+          <Parameter Name="PPW_EXP_DAYS" Type="varchar" Mode="In" />
+          <Parameter Name="ip" Type="varchar" Mode="In" />
+          <Parameter Name="mac" Type="varchar" Mode="In" />
+          <Parameter Name="PreDNS" Type="varchar" Mode="In" />
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+          <Parameter Name="mobileno" Type="numeric" Mode="In" />
+          <Parameter Name="ExecModuleCode" Type="varchar" Mode="In" />
+          <Parameter Name="PMUTI_COMP" Type="varchar" Mode="In" />
+          <Parameter Name="pexeccode" Type="varchar" Mode="In" />
+          <Parameter Name="pextra1" Type="varchar" Mode="In" />
+          <Parameter Name="pextra2" Type="varchar" Mode="In" />
+          <Parameter Name="pextra3" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="TPN_CRMModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TPN_CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TPN_CRMEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="AppLoginUser" ReturnType="Collection(TPN_CRMModel.SCM_APP_LOGINUSER_Result)">
+            <Parameter Name="PUSERNAME" Mode="In" Type="String" />
+            <Parameter Name="PPASSWORD" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetLocations" ReturnType="Collection(TPN_CRMModel.SCM_BIND_LOCTION_Result)">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PCENT_CODE" Mode="In" Type="String" />
+            <Parameter Name="PLOC_CODE" Mode="In" Type="String" />
+            <Parameter Name="PLOC_NAME" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA1" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA2" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA3" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetShopkeepers" ReturnType="Collection(TPN_CRMModel.SCM_BIND_SHOP_P_Result)">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PCITY" Mode="In" Type="String" />
+            <Parameter Name="PLOCATION" Mode="In" Type="String" />
+            <Parameter Name="PTYPE" Mode="In" Type="String" />
+            <Parameter Name="PNAME" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA1" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA2" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA3" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA4" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCities" ReturnType="Collection(TPN_CRMModel.SCM_BINDCITYF2_Result)">
+            <Parameter Name="pcountry" Mode="In" Type="String" />
+            <Parameter Name="pcity" Mode="In" Type="String" />
+            <Parameter Name="Pstate_code" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetRetTypes" ReturnType="Collection(TPN_CRMModel.SCM_RET_TYPE_P_Result)">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetSelProdTypes" ReturnType="Collection(TPN_CRMModel.SCM_SEL_PROD_TYPE_Result)">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PCENT_CODE" Mode="In" Type="String" />
+            <Parameter Name="PPROD_CODE" Mode="In" Type="String" />
+            <Parameter Name="PPROD_NAME" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA1" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA2" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA3" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpsertAppUser">
+            <Parameter Name="UserCode" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="UserType" Mode="In" Type="String" />
+            <Parameter Name="UserFname" Mode="In" Type="String" />
+            <Parameter Name="UserLname" Mode="In" Type="String" />
+            <Parameter Name="Userpassword" Mode="In" Type="String" />
+            <Parameter Name="pagency" Mode="In" Type="String" />
+            <Parameter Name="pdeptcode" Mode="In" Type="String" />
+            <Parameter Name="pbranch" Mode="In" Type="String" />
+            <Parameter Name="pdateformat" Mode="In" Type="String" />
+            <Parameter Name="defcomp" Mode="In" Type="String" />
+            <Parameter Name="lstcomp" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="prole" Mode="In" Type="String" />
+            <Parameter Name="pstatus" Mode="In" Type="String" />
+            <Parameter Name="pbranchper" Mode="In" Type="String" />
+            <Parameter Name="pcompanyname" Mode="In" Type="String" />
+            <Parameter Name="pcompagen" Mode="In" Type="String" />
+            <Parameter Name="Userid" Mode="In" Type="String" />
+            <Parameter Name="PPW_EXP_DAYS" Mode="In" Type="String" />
+            <Parameter Name="ip" Mode="In" Type="String" />
+            <Parameter Name="mac" Mode="In" Type="String" />
+            <Parameter Name="PreDNS" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="mobileno" Mode="In" Type="Decimal" />
+            <Parameter Name="ExecModuleCode" Mode="In" Type="String" />
+            <Parameter Name="PMUTI_COMP" Mode="In" Type="String" />
+            <Parameter Name="pexeccode" Mode="In" Type="String" />
+            <Parameter Name="pextra1" Mode="In" Type="String" />
+            <Parameter Name="pextra2" Mode="In" Type="String" />
+            <Parameter Name="pextra3" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpsertShopkeeper">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PSHOP_TYPE" Mode="In" Type="String" />
+            <Parameter Name="PDISTSHOP_NAME" Mode="In" Type="String" />
+            <Parameter Name="PSALES_C_CODE" Mode="In" Type="String" />
+            <Parameter Name="PSHOP_KEEP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PSHOP_KEEP_NAME" Mode="In" Type="String" />
+            <Parameter Name="PSHOP_KEEP_NICK" Mode="In" Type="String" />
+            <Parameter Name="PADD1" Mode="In" Type="String" />
+            <Parameter Name="PCITY_CODE" Mode="In" Type="String" />
+            <Parameter Name="PADD2" Mode="In" Type="String" />
+            <Parameter Name="PLOCATION_CODE" Mode="In" Type="String" />
+            <Parameter Name="PEMAIL_ID" Mode="In" Type="String" />
+            <Parameter Name="PPHONE" Mode="In" Type="String" />
+            <Parameter Name="PMOBILE" Mode="In" Type="String" />
+            <Parameter Name="PREMARKS" Mode="In" Type="String" />
+            <Parameter Name="PSTATUS" Mode="In" Type="String" />
+            <Parameter Name="PSTATUS_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="PEXTRA1" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA2" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA3" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA4" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA5" Mode="In" Type="String" />
+            <Parameter Name="IP" Mode="In" Type="String" />
+            <Parameter Name="PUSERID" Mode="In" Type="String" />
+            <Parameter Name="PTYPE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetVisitStatus" ReturnType="Collection(TPN_CRMModel.SCM_SCM_VISIT_STATUS_P_Result)">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetProducts" ReturnType="Collection(TPN_CRMModel.PPC_PRODUCT_MAST_P_Result)">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetBanks" ReturnType="Collection(TPN_CRMModel.SCM_BANK_P_Result)" />
+          <FunctionImport Name="GetStates" ReturnType="Collection(TPN_CRMModel.SCM_STATE_P_Result)">
+          <Parameter Name="PSTATE_NAME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddMeeting">
+            <Parameter Name="P_COMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_CENT_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_SCM_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_STATE_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_CITY_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_TYPE_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_LOCATION_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_DISTRIBUTOR_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_DIST_PRODUCT" Mode="In" Type="String" />
+            <Parameter Name="P_DIST_REMARKS" Mode="In" Type="String" />
+            <Parameter Name="P_CLIENT_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_CLIENT_NAME" Mode="In" Type="String" />
+            <Parameter Name="P_MOBILE" Mode="In" Type="String" />
+            <Parameter Name="P_VISIT_STATUS" Mode="In" Type="String" />
+            <Parameter Name="P_ADDR1" Mode="In" Type="String" />
+            <Parameter Name="P_ADDR2" Mode="In" Type="String" />
+            <Parameter Name="P_NEXT_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="P_PAY_MODE" Mode="In" Type="String" />
+            <Parameter Name="P_CHEQUE_NO" Mode="In" Type="String" />
+            <Parameter Name="P_CHEQUE_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="P_BANK_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_BANK_NAME" Mode="In" Type="String" />
+            <Parameter Name="P_AMOUNT" Mode="In" Type="Decimal" />
+            <Parameter Name="P_CLIENT_PRODUCT" Mode="In" Type="String" />
+            <Parameter Name="P_PHOTO_PATH" Mode="In" Type="String" />
+            <Parameter Name="P_ORDER_Y_N" Mode="In" Type="String" />
+            <Parameter Name="P_REMARKS" Mode="In" Type="String" />
+            <Parameter Name="P_EMI" Mode="In" Type="String" />
+            <Parameter Name="P_CREATED_BY" Mode="In" Type="String" />
+            <Parameter Name="P_EXTRA" Mode="In" Type="String" />
+            <Parameter Name="P_EXTRA1" Mode="In" Type="String" />
+            <Parameter Name="P_EXTRA2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetMeeting" ReturnType="Collection(TPN_CRMModel.SCM_APP_FETCH_Result)">
+            <Parameter Name="P_COMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_CENT_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_SCM_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_STATE_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_CITY_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_TYPE_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_LOCATION_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_DISTRIBUTOR_CODE" Mode="In" Type="String" />
+            <Parameter Name="P_USER_ID" Mode="In" Type="String" />
+            <Parameter Name="P_FROM_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="P_TO_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="P_REPORT_TYPE" Mode="In" Type="String" />
+            <Parameter Name="P_EXTRA" Mode="In" Type="String" />
+            <Parameter Name="P_EXTRA1" Mode="In" Type="String" />
+            <Parameter Name="P_EXTRA2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpsertLocation">
+            <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
+            <Parameter Name="PLOC_CODE" Mode="In" Type="String" />
+            <Parameter Name="CITY_CODE" Mode="In" Type="String" />
+            <Parameter Name="PLOC_NAME" Mode="In" Type="String" />
+            <Parameter Name="PREMARKS" Mode="In" Type="String" />
+            <Parameter Name="PSTATUS" Mode="In" Type="String" />
+            <Parameter Name="PIP" Mode="In" Type="String" />
+            <Parameter Name="PCREATED_BY" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateNextNum" ReturnType="Collection(Decimal)" />
+        </EntityContainer>
+        <ComplexType Name="SCM_APP_LOGINUSER_Result">
+          <Property Type="String" Name="RES" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="COMP_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="USERNAME" Nullable="true" MaxLength="120" />
+          <Property Type="String" Name="EMAIL" Nullable="true" MaxLength="120" />
+          <Property Type="String" Name="MOBILE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TYPE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="USERID" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_BIND_LOCTION_Result">
+          <Property Type="String" Name="LOC_CODE" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="LOC_NAME" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_BIND_SHOP_P_Result">
+          <Property Type="String" Name="DISTSHOP_NAME" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="SHOP_KEEP_NAME" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="ADD2" Nullable="true" MaxLength="1001" />
+          <Property Type="String" Name="CITY_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CITY_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOCATION_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOCATION_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MOBILE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SHOP_KEEP_CODE" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_BINDCITYF2_Result">
+          <Property Type="String" Name="CITY_CODE" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="CITY_NAME" Nullable="false" MaxLength="103" />
+        </ComplexType>
+        <ComplexType Name="SCM_RET_TYPE_P_Result">
+          <Property Type="String" Name="type_code" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="TYPE_NICK" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_SEL_PROD_TYPE_Result">
+          <Property Type="String" Name="PRODUCT_CODE" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="PRODUCT_NAME" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_SHOPKEEPER_MAST_INSUPDDEL_Result">
+          <Property Type="String" Name="COMP_CODE" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="SHOP_KEEP_CODE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SHOP_TYPE" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DISTSHOP_NAME" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="SALES_C_CODE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SALES_PRSN_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SHOP_KEEP_NAME" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="SHOP_KEEP_NICK" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="ADD1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="CITY_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CITY_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ADD2" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="LOCATION_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOC_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EMAIL_ID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PHONE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MOBILE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="REMARKS" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="STATUS_DATE" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="CREATE_USER" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CREATE_DATE" Nullable="true" MaxLength="92" />
+          <Property Type="String" Name="UPDATE_USER" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UPDATE_DATE" Nullable="true" MaxLength="92" />
+        </ComplexType>
+        <ComplexType Name="SCM_SCM_VISIT_STATUS_P_Result">
+          <Property Type="String" Name="VISIT_CODE" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="VISIT_NICK" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="PPC_PRODUCT_SIZE_MAST_P_Result">
+          <Property Type="String" Name="SIZE_CODE" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SIZE_NAME" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="PPC_PRODUCT_MAST_P_Result">
+          <Property Type="String" Name="PRODUCT_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PRODUCT_NAME" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PACKING_TYPE_CODE" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PACKING_TYPE_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SIZE_CODE" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SIZE_NAME" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="UpsertShopkeeper_Result">
+          <Property Type="String" Name="COMP_CODE" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="SHOP_KEEP_CODE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SHOP_TYPE" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DISTSHOP_NAME" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="SALES_C_CODE" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SALES_PRSN_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SHOP_KEEP_NAME" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="SHOP_KEEP_NICK" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="ADD1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="CITY_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CITY_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ADD2" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="LOCATION_CODE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOC_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EMAIL_ID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PHONE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MOBILE" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="REMARKS" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="STATUS" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="STATUS_DATE" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="CREATE_USER" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CREATE_DATE" Nullable="true" MaxLength="92" />
+          <Property Type="String" Name="UPDATE_USER" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UPDATE_DATE" Nullable="true" MaxLength="92" />
+        </ComplexType>
+        <ComplexType Name="SCM_BANK_P_Result">
+          <Property Type="String" Name="BANK_CODE" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="BANK_NAME" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_STATE_P_Result">
+          <Property Type="String" Name="STATE_CODE" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="STATE_NAME" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SCM_APP_FETCH_Result">
+          <Property Type="String" Name="COMP_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CENT_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SCM_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="STATE_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="STATE_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CITY_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CITY_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TYPE_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="TYPE_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOCATION_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOCATION_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DIST_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DISTRIBUTOR_NAME" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="DIST_PRODUCT" Nullable="true" />
+          <Property Type="String" Name="DIST_REMARKS" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PAY_MODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CHEQUE_NO" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="CHEQUE_DATE" Nullable="true" Precision="23" />
+          <Property Type="String" Name="BANK_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="BANK_NAME" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="AMOUNT" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="String" Name="CLIENT_CODE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CLIENT_NAME" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="MOBILE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="VISIT_STATUS" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ADDR1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ADDR2" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="NEXT_DATE" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PHOTO_PATH" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ORDER_FLAG" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CLIENT_PRODUCT" Nullable="true" />
+          <Property Type="String" Name="REMARKS" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="UPDATE_DATE" Nullable="false" Precision="18" Scale="0" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TPN_CRMModelStoreContainer" CdmEntityContainer="TPN_CRMEntities" >
+          <FunctionImportMapping FunctionImportName="AppLoginUser" FunctionName="TPN_CRMModel.Store.SCM_APP_LOGINUSER">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_APP_LOGINUSER_Result">
+                <ScalarProperty Name="RES" ColumnName="RES" />
+                <ScalarProperty Name="COMP_CODE" ColumnName="COMP_CODE" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetLocations" FunctionName="TPN_CRMModel.Store.SCM_BIND_LOCTION">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_BIND_LOCTION_Result">
+                <ScalarProperty Name="LOC_CODE" ColumnName="LOC_CODE" />
+                <ScalarProperty Name="LOC_NAME" ColumnName="LOC_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetShopkeepers" FunctionName="TPN_CRMModel.Store.SCM_BIND_SHOP_P">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_BIND_SHOP_P_Result">
+                <ScalarProperty Name="DISTSHOP_NAME" ColumnName="DISTSHOP_NAME" />
+                <ScalarProperty Name="SHOP_KEEP_NAME" ColumnName="SHOP_KEEP_NAME" />
+                <ScalarProperty Name="ADD2" ColumnName="ADD2" />
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+                <ScalarProperty Name="LOCATION_CODE" ColumnName="LOCATION_CODE" />
+                <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="SHOP_KEEP_CODE" ColumnName="SHOP_KEEP_CODE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCities" FunctionName="TPN_CRMModel.Store.SCM_BINDCITYF2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_BINDCITYF2_Result">
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetRetTypes" FunctionName="TPN_CRMModel.Store.SCM_RET_TYPE_P">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_RET_TYPE_P_Result">
+                <ScalarProperty Name="type_code" ColumnName="type_code" />
+                <ScalarProperty Name="TYPE_NICK" ColumnName="TYPE_NICK" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSelProdTypes" FunctionName="TPN_CRMModel.Store.SCM_SEL_PROD_TYPE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_SEL_PROD_TYPE_Result">
+                <ScalarProperty Name="PRODUCT_CODE" ColumnName="PRODUCT_CODE" />
+                <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpsertAppUser" FunctionName="TPN_CRMModel.Store.SCM_USER_MAST_INSUPDDEL" />
+          <FunctionImportMapping FunctionImportName="UpsertShopkeeper" FunctionName="TPN_CRMModel.Store.SCM_SHOPKEEPER_MAST_INSUPDDEL">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetVisitStatus" FunctionName="TPN_CRMModel.Store.SCM_SCM_VISIT_STATUS_P">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_SCM_VISIT_STATUS_P_Result">
+                <ScalarProperty Name="VISIT_CODE" ColumnName="VISIT_CODE" />
+                <ScalarProperty Name="VISIT_NICK" ColumnName="VISIT_NICK" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProducts" FunctionName="TPN_CRMModel.Store.PPC_PRODUCT_MAST_P">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.PPC_PRODUCT_MAST_P_Result">
+                <ScalarProperty Name="PRODUCT_CODE" ColumnName="PRODUCT_CODE" />
+                <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+                <ScalarProperty Name="PACKING_TYPE_CODE" ColumnName="PACKING_TYPE_CODE" />
+                <ScalarProperty Name="PACKING_TYPE_NAME" ColumnName="PACKING_TYPE_NAME" />
+                <ScalarProperty Name="SIZE_CODE" ColumnName="SIZE_CODE" />
+                <ScalarProperty Name="SIZE_NAME" ColumnName="SIZE_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBanks" FunctionName="TPN_CRMModel.Store.SCM_BANK_P">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_BANK_P_Result">
+                <ScalarProperty Name="BANK_CODE" ColumnName="BANK_CODE" />
+                <ScalarProperty Name="BANK_NAME" ColumnName="BANK_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetStates" FunctionName="TPN_CRMModel.Store.SCM_STATE_P">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_STATE_P_Result">
+                <ScalarProperty Name="STATE_CODE" ColumnName="STATE_CODE" />
+                <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AddMeeting" FunctionName="TPN_CRMModel.Store.SCM_APP_NEW_P" />
+          <FunctionImportMapping FunctionImportName="GetMeeting" FunctionName="TPN_CRMModel.Store.SCM_APP_FETCH">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TPN_CRMModel.SCM_APP_FETCH_Result">
+                <ScalarProperty Name="COMP_CODE" ColumnName="COMP_CODE" />
+                <ScalarProperty Name="CENT_CODE" ColumnName="CENT_CODE" />
+                <ScalarProperty Name="SCM_CODE" ColumnName="SCM_CODE" />
+                <ScalarProperty Name="STATE_CODE" ColumnName="STATE_CODE" />
+                <ScalarProperty Name="STATE_NAME" ColumnName="STATE_NAME" />
+                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+                <ScalarProperty Name="TYPE_CODE" ColumnName="TYPE_CODE" />
+                <ScalarProperty Name="TYPE_NAME" ColumnName="TYPE_NAME" />
+                <ScalarProperty Name="LOCATION_CODE" ColumnName="LOCATION_CODE" />
+                <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+                <ScalarProperty Name="DIST_CODE" ColumnName="DIST_CODE" />
+                <ScalarProperty Name="DISTRIBUTOR_NAME" ColumnName="DISTRIBUTOR_NAME" />
+                <ScalarProperty Name="DIST_PRODUCT" ColumnName="DIST_PRODUCT" />
+                <ScalarProperty Name="DIST_REMARKS" ColumnName="DIST_REMARKS" />
+                <ScalarProperty Name="PAY_MODE" ColumnName="PAY_MODE" />
+                <ScalarProperty Name="CHEQUE_NO" ColumnName="CHEQUE_NO" />
+                <ScalarProperty Name="CHEQUE_DATE" ColumnName="CHEQUE_DATE" />
+                <ScalarProperty Name="BANK_CODE" ColumnName="BANK_CODE" />
+                <ScalarProperty Name="BANK_NAME" ColumnName="BANK_NAME" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="CLIENT_CODE" ColumnName="CLIENT_CODE" />
+                <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="VISIT_STATUS" ColumnName="VISIT_STATUS" />
+                <ScalarProperty Name="ADDR1" ColumnName="ADDR1" />
+                <ScalarProperty Name="ADDR2" ColumnName="ADDR2" />
+                <ScalarProperty Name="NEXT_DATE" ColumnName="NEXT_DATE" />
+                <ScalarProperty Name="PHOTO_PATH" ColumnName="PHOTO_PATH" />
+                <ScalarProperty Name="ORDER_FLAG" ColumnName="ORDER_FLAG" />
+                <ScalarProperty Name="CLIENT_PRODUCT" ColumnName="CLIENT_PRODUCT" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpsertLocation" FunctionName="TPN_CRMModel.Store.SCM_LOCATION_MASTINSUPDDEL">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateNextNum" FunctionName="TPN_CRMModel.Store.SCM_NUM_GEN" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

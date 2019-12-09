@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DDE7E1E-0D30-4923-A51A-16DEA4860E8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eTrackModels</RootNamespace>
+    <AssemblyName>eTrackModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\eTrackModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eTrackModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\eTrackModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\eTrackModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eTrackModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PPC_PRODUCT_MAST_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PPC_PRODUCT_SIZE_MAST_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_APP_FETCH_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_APP_LOGINUSER_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_BANK_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_BINDCITYF2_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_BIND_LOCTION_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_BIND_SHOP_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_RET_TYPE_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_SCM_VISIT_STATUS_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_SEL_PROD_TYPE_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_SHOPKEEPER_MAST_INSUPDDEL_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SCM_STATE_P_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UpsertShopkeeper_Result.cs">
+      <DependentUpon>eTrackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\eTrackModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>eTrackModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Models\eTrackModel.edmx.diagram">
+      <DependentUpon>eTrackModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\eTrackModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eTrackModel.edmx</DependentUpon>
+      <LastGenOutput>eTrackModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\eTrackModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eTrackModel.edmx</DependentUpon>
+      <LastGenOutput>eTrackModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

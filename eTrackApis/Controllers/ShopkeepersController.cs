@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using eTrackApis.ViewModels;
+using eTrackModels.Models;
+
+namespace eTrackApis.Controllers
+{
+    public class ShopkeepersController : ApiController
+    {
+        private TPN_CRMEntities db = new TPN_CRMEntities();
+
+        public HttpResponseMessage Get([FromUri]ShopPostVm param)
+        {
+            if (param.RequestType != null && param.RequestType.ToLower() == "slim")
+            {
+                var shops = db.GetShopkeepers(param.CompCode, param.CityCode, param.LocationCode, param.ShopType, param.DistShopName, param.Extra1, param.Extra2, param.Extra3, param.Extra4).ToList();
+
+                return Request.CreateResponse(new ResponseData(shops) { Message = "Data from SCM_BIND_SHOP_P, Use it for binding customer/shopkeeper control" });
+            }
+            else
+            {
+                var data = db.Database.SqlQuery<ShopkeeperType>(@"EXEC SCM_SHOPKEEPER_MAST_INSUPDDEL @PCOMP_CODE='" + param.CompCode + "',"
+                + @"@PSHOP_KEEP_CODE='',@PSHOP_TYPE='',@PDISTSHOP_NAME='',@PSALES_C_CODE='" + param.SalesCCode + "',@PSHOP_KEEP_NAME='" + param.ShopKeepName + "',@PSHOP_KEEP_NICK=''," +
+                @"@PADD1='',@PCITY_CODE='" + param.CityCode + "', @PADD2='',@PLOCATION_CODE='" + param.LocationCode + "',@PEMAIL_ID='',@PPHONE='',@PMOBILE='',@PREMARKS='',@PSTATUS='',@PSTATUS_DATE=NULL," +
+                @"@PEXTRA1='',@PEXTRA2='',@PEXTRA3='',@PEXTRA4='',@PEXTRA5='',@IP='', @PUSERID='',@PTYPE='E' ")
+                .ToList();
+
+                return Request.CreateResponse(new ResponseData(data) { Message = "Data from SCM_SHOPKEEPER_MAST_INSUPDDEL, Use it for searching old customer/shopkeeper." });
+            }
+        }
+
+        public HttpResponseMessage Post([FromBody]ShopPostVm param)
+        {
+            if (param.Type == null)
+            {
+                param.Type = "I";
+            }
+            try
+            {
+                var data = db.UpsertShopkeeper(param.CompCode, param.ShopType, param.DistShopName,
+                      param.SalesCCode, param.ShopKeepCode, param.ShopKeepName,
+                      param.ShopKeepNick, param.Add1, param.CityCode, param.Add2,
+                      param.LocationCode, param.Email, param.Phone, param.Mobile,
+                      param.Remarks, param.Status, param.StatusDate,
+                      param.Extra1, param.Extra2, param.Extra3, param.Extra4, param.Extra5,
+                      param.IP, param.UserId, param.Type);
+
+
+                return Request.CreateResponse(HttpStatusCode.Created, new ResponseData(data) { R = data > -1 ? "Y" : "N", Message = data.ToString() });
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.Created, new ResponseData(ex) { R = "N", Message = ex.InnerException == null ? ex.Message : ex.InnerException.Message });
+            }
+        }
+    }
+    
+}
