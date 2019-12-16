@@ -32,7 +32,10 @@ namespace eTrackApis.Controllers
 
             return d;
         }
-
+        public string Get(int id)
+        {
+            return "Id Is " + id;
+        }
         // GET api/values/5
         //public string Get(int id)
         //{

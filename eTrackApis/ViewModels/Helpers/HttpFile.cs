@@ -9,11 +9,22 @@ namespace eTrackApis.ViewModels.Helpers
 {
     public class HttpFile
     {
-        public static void SaveBase64Image(string base64String, string basePath, string path)
+        public static string SaveBase64Image(string base64String, string basePath, string fileName)
         {
-            path = basePath + new Guid() + "_" + Path.GetFileName(path);
-            byte[] bytes = Convert.FromBase64String(base64String);
-            File.WriteAllBytes(path, bytes);
+            try
+            {
+                fileName = new Guid() + "_" + Path.GetFileName(fileName);
+
+                byte[] bytes = Convert.FromBase64String(base64String);
+                File.WriteAllBytes(basePath + fileName, bytes);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                //return null;
+            }
+
+            return fileName;
         }
     }
 }

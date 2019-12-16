@@ -15,7 +15,7 @@ namespace eTrackApis.Controllers
 
         public HttpResponseMessage Get()
         {
-            var number = Convert.ToInt32(db.GenerateNextNum().SingleOrDefault().ToString());
+            var number = Convert.ToInt32(db.Database.SqlQuery<Decimal>("SCM_NUM_GEN").SingleOrDefault().ToString());
             return Request.CreateResponse(new ResponseData(number) { Message = "SCM_APP Next number" });
         }
         public HttpResponseMessage Get(string type)
