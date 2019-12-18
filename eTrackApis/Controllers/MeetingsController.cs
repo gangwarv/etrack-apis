@@ -35,7 +35,6 @@ namespace eTrackApis.Controllers
                     param = new MeetingVm();
                     var httpRequest = HttpContext.Current.Request;
                     param.CompCode = httpRequest.Form["CompCode"];
-                    param.CompCode = httpRequest.Form["CompCode"];
                     param.CentCode = httpRequest.Form["CentCode"];
                     param.ScmCode = httpRequest.Form["ScmCode"];
                     param.StateCode = httpRequest.Form["StateCode"];
@@ -67,6 +66,9 @@ namespace eTrackApis.Controllers
                     param.Extra = httpRequest.Form["Extra"];
                     param.Extra1 = httpRequest.Form["Extra1"];
                     param.Extra2 = httpRequest.Form["Extra2"];
+
+                    // For Update
+                    param.PhotoPath = httpRequest.Form["PhotoPath"];
                 }
                 SaveFiles(param);
 
@@ -100,15 +102,15 @@ namespace eTrackApis.Controllers
         }
         private void SaveFiles(MeetingVm param)
         {
-            var basePath = System.Configuration.ConfigurationManager.AppSettings["FilesPath"];
-            if (basePath == null)
+            var relativePath = System.Configuration.ConfigurationManager.AppSettings["FilesPath"];
+            var basePath = "";
+
+            if (relativePath == null)
             {
-                basePath = "~/Content/";
+                relativePath = "~/Content/Meetings/";
             }
-            if (basePath.StartsWith("~"))
-            {
-                basePath = HttpContext.Current.Server.MapPath(basePath + "/Meetings/");
-            }
+
+            basePath = HttpContext.Current.Server.MapPath(relativePath);
 
             var httpRequest = HttpContext.Current.Request;
             var i = 0;
@@ -121,9 +123,10 @@ namespace eTrackApis.Controllers
                 foreach (string fileName in httpRequest.Files.Keys)
                 {
                     var file = httpRequest.Files[fileName];
-                    var filePath = basePath + Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                    var filename = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                    var filePath = basePath + filename;
                     if (i == 0)
-                        param.PhotoPath = filePath;
+                        param.PhotoPath = relativePath.Substring(1) + filename;
                     //if (i == 1)
                     //    param.PhotoPath1 = filePath;
                     //if (i == 2)
