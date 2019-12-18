@@ -16,7 +16,7 @@ namespace eTrackApis.Controllers
 
         public HttpResponseMessage Get([FromUri]CityVm param)
         {
-            var cities = db.GetCities(param.Country, param.City, param.StateCode).ToList();
+            var cities = db.GetCities(param.Country, param.City, param.StateCode, param.UserId).ToList();
             return Request.CreateResponse(new ResponseData(cities));
         }
         // test

@@ -10,5 +10,6 @@ namespace eTrackApis.ViewModels
         public string Country { get; set; }
         public string City { get; set; }
         public string StateCode { get; set; }
+        public string UserId { get; set; }
     }
 }

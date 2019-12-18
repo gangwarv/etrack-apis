@@ -115,7 +115,7 @@ namespace eTrackModels.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SCM_BIND_SHOP_P_Result>("GetShopkeepers", pCOMP_CODEParameter, pCITYParameter, pLOCATIONParameter, pTYPEParameter, pNAMEParameter, pEXTRA1Parameter, pEXTRA2Parameter, pEXTRA3Parameter, pEXTRA4Parameter);
         }
     
-        public virtual ObjectResult<SCM_BINDCITYF2_Result> GetCities(string pcountry, string pcity, string pstate_code)
+        public virtual ObjectResult<SCM_BINDCITYF2_Result> GetCities(string pcountry, string pcity, string pstate_code, string pUSERID)
         {
             var pcountryParameter = pcountry != null ?
                 new ObjectParameter("pcountry", pcountry) :
@@ -129,7 +129,11 @@ namespace eTrackModels.Models
                 new ObjectParameter("Pstate_code", pstate_code) :
                 new ObjectParameter("Pstate_code", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SCM_BINDCITYF2_Result>("GetCities", pcountryParameter, pcityParameter, pstate_codeParameter);
+            var pUSERIDParameter = pUSERID != null ?
+                new ObjectParameter("PUSERID", pUSERID) :
+                new ObjectParameter("PUSERID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SCM_BINDCITYF2_Result>("GetCities", pcountryParameter, pcityParameter, pstate_codeParameter, pUSERIDParameter);
         }
     
         public virtual ObjectResult<SCM_RET_TYPE_P_Result> GetRetTypes(string pCOMP_CODE, string pEXTRA)
@@ -443,13 +447,17 @@ namespace eTrackModels.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SCM_BANK_P_Result>("GetBanks");
         }
     
-        public virtual ObjectResult<SCM_STATE_P_Result> GetStates(string pSTATE_NAME)
+        public virtual ObjectResult<SCM_STATE_P_Result> GetStates(string pSTATE_NAME, string pUSERID)
         {
             var pSTATE_NAMEParameter = pSTATE_NAME != null ?
                 new ObjectParameter("PSTATE_NAME", pSTATE_NAME) :
                 new ObjectParameter("PSTATE_NAME", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SCM_STATE_P_Result>("GetStates", pSTATE_NAMEParameter);
+            var pUSERIDParameter = pUSERID != null ?
+                new ObjectParameter("PUSERID", pUSERID) :
+                new ObjectParameter("PUSERID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SCM_STATE_P_Result>("GetStates", pSTATE_NAMEParameter, pUSERIDParameter);
         }
     
         public virtual int AddMeeting(string p_COMP_CODE, string p_CENT_CODE, string p_SCM_CODE, string p_STATE_CODE, string p_CITY_CODE, string p_TYPE_CODE, string p_LOCATION_CODE, string p_DISTRIBUTOR_CODE, string p_DIST_PRODUCT, string p_DIST_REMARKS, string p_CLIENT_CODE, string p_CLIENT_NAME, string p_MOBILE, string p_VISIT_STATUS, string p_ADDR1, string p_ADDR2, Nullable<System.DateTime> p_NEXT_DATE, string p_PAY_MODE, string p_CHEQUE_NO, Nullable<System.DateTime> p_CHEQUE_DATE, string p_BANK_CODE, string p_BANK_NAME, Nullable<decimal> p_AMOUNT, string p_CLIENT_PRODUCT, string p_PHOTO_PATH, string p_ORDER_Y_N, string p_REMARKS, string p_EMI, string p_CREATED_BY, string p_EXTRA, string p_EXTRA1, string p_EXTRA2)

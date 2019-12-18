@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Dot Net\eTrackApis\eTrackModels\Models\eTrackModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Proj\eTrackApis\eTrackApis\eTrackModels\Models\eTrackModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

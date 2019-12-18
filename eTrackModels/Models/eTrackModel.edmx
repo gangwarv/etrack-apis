@@ -89,6 +89,7 @@
           <Parameter Name="pcountry" Type="varchar" Mode="In" />
           <Parameter Name="pcity" Type="varchar" Mode="In" />
           <Parameter Name="Pstate_code" Type="varchar" Mode="In" />
+          <Parameter Name="PUSERID" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SCM_LOCATION_MASTINSUPDDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PCOMP_CODE" Type="varchar" Mode="In" />
@@ -148,6 +149,7 @@
         </Function>
         <Function Name="SCM_STATE_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PSTATE_NAME" Type="varchar" Mode="In" />
+          <Parameter Name="PUSERID" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SCM_USER_MAST_INSUPDDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserCode" Type="varchar" Mode="In" />
@@ -216,6 +218,7 @@
             <Parameter Name="pcountry" Mode="In" Type="String" />
             <Parameter Name="pcity" Mode="In" Type="String" />
             <Parameter Name="Pstate_code" Mode="In" Type="String" />
+            <Parameter Name="PUSERID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetRetTypes" ReturnType="Collection(TPN_CRMModel.SCM_RET_TYPE_P_Result)">
             <Parameter Name="PCOMP_CODE" Mode="In" Type="String" />
@@ -300,7 +303,8 @@
           </FunctionImport>
           <FunctionImport Name="GetBanks" ReturnType="Collection(TPN_CRMModel.SCM_BANK_P_Result)" />
           <FunctionImport Name="GetStates" ReturnType="Collection(TPN_CRMModel.SCM_STATE_P_Result)">
-          <Parameter Name="PSTATE_NAME" Mode="In" Type="String" />
+            <Parameter Name="PSTATE_NAME" Mode="In" Type="String" />
+            <Parameter Name="PUSERID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AddMeeting">
             <Parameter Name="P_COMP_CODE" Mode="In" Type="String" />
@@ -392,7 +396,7 @@
         </ComplexType>
         <ComplexType Name="SCM_BINDCITYF2_Result">
           <Property Type="String" Name="CITY_CODE" Nullable="false" MaxLength="8" />
-          <Property Type="String" Name="CITY_NAME" Nullable="false" MaxLength="103" />
+          <Property Type="String" Name="CITY_NAME" Nullable="false" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="SCM_RET_TYPE_P_Result">
           <Property Type="String" Name="type_code" Nullable="false" MaxLength="8" />

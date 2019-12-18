@@ -15,7 +15,7 @@ namespace eTrackApis.Controllers
 
         public HttpResponseMessage Get([FromUri]StateVm param)
         {
-            var data = db.GetStates(param.StateName).ToList();
+            var data = db.GetStates(param.StateName, param.UserId).ToList();
             return Request.CreateResponse(new ResponseData(data));
         }
     }
