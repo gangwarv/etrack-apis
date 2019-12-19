@@ -13,7 +13,7 @@ namespace eTrackApis.ViewModels.Helpers
         {
             try
             {
-                fileName = new Guid() + "_" + Path.GetFileName(fileName);
+                fileName = Guid.NewGuid() + "_" + Path.GetFileName(fileName);
 
                 byte[] bytes = Convert.FromBase64String(base64String);
                 File.WriteAllBytes(basePath + fileName, bytes);

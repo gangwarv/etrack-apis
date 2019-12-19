@@ -14,6 +14,10 @@ using eTrackModels.Models;
 
 namespace eTrackApis.Controllers
 {
+    public class Restriction
+    {
+        public static bool Is = false;
+    }
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -34,6 +38,7 @@ namespace eTrackApis.Controllers
         }
         public string Get(int id)
         {
+            Restriction.Is = id == 1;
             return "Id Is " + id;
         }
         // GET api/values/5

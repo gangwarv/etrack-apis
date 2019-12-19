@@ -703,5 +703,26 @@ namespace eTrackModels.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("GenerateNextNum");
         }
+    
+        public virtual ObjectResult<string> ChangePassword(string pUSERNAME, string pOLD_PASSWORD, string pNEW_PASSWORD, string pEXTRA)
+        {
+            var pUSERNAMEParameter = pUSERNAME != null ?
+                new ObjectParameter("PUSERNAME", pUSERNAME) :
+                new ObjectParameter("PUSERNAME", typeof(string));
+    
+            var pOLD_PASSWORDParameter = pOLD_PASSWORD != null ?
+                new ObjectParameter("POLD_PASSWORD", pOLD_PASSWORD) :
+                new ObjectParameter("POLD_PASSWORD", typeof(string));
+    
+            var pNEW_PASSWORDParameter = pNEW_PASSWORD != null ?
+                new ObjectParameter("PNEW_PASSWORD", pNEW_PASSWORD) :
+                new ObjectParameter("PNEW_PASSWORD", typeof(string));
+    
+            var pEXTRAParameter = pEXTRA != null ?
+                new ObjectParameter("PEXTRA", pEXTRA) :
+                new ObjectParameter("PEXTRA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ChangePassword", pUSERNAMEParameter, pOLD_PASSWORDParameter, pNEW_PASSWORDParameter, pEXTRAParameter);
+        }
     }
 }

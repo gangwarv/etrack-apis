@@ -48,7 +48,7 @@ namespace eTrackApis.Controllers
                     foreach (string fileName in httpRequest.Files.Keys)
                     {
                         var file = httpRequest.Files[fileName];
-                        var filePathRelative = Guid.NewGuid() + "_" + Path.GetFileName(file.FileName);
+                        var filePathRelative = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
                         file.SaveAs(dir + filePathRelative);
 
                         data.Add(filePathRelative);

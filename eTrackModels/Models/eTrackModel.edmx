@@ -30,6 +30,12 @@
           <Parameter Name="PUSERNAME" Type="varchar" Mode="In" />
           <Parameter Name="PPASSWORD" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SCM_APP_LOGINUSER_PASSWORD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PUSERNAME" Type="varchar" Mode="In" />
+          <Parameter Name="POLD_PASSWORD" Type="varchar" Mode="In" />
+          <Parameter Name="PNEW_PASSWORD" Type="varchar" Mode="In" />
+          <Parameter Name="PEXTRA" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SCM_APP_NEW_P" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="P_COMP_CODE" Type="varchar" Mode="In" />
           <Parameter Name="P_CENT_CODE" Type="varchar" Mode="In" />
@@ -369,6 +375,12 @@
             <Parameter Name="Type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GenerateNextNum" ReturnType="Collection(Decimal)" />
+          <FunctionImport Name="ChangePassword" ReturnType="Collection(String)">
+            <Parameter Name="PUSERNAME" Mode="In" Type="String" />
+            <Parameter Name="POLD_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="PNEW_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="PEXTRA" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SCM_APP_LOGINUSER_Result">
           <Property Type="String" Name="RES" Nullable="false" MaxLength="1" />
@@ -665,6 +677,7 @@
           <FunctionImportMapping FunctionImportName="UpsertLocation" FunctionName="TPN_CRMModel.Store.SCM_LOCATION_MASTINSUPDDEL">
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GenerateNextNum" FunctionName="TPN_CRMModel.Store.SCM_NUM_GEN" />
+          <FunctionImportMapping FunctionImportName="ChangePassword" FunctionName="TPN_CRMModel.Store.SCM_APP_LOGINUSER_PASSWORD" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
