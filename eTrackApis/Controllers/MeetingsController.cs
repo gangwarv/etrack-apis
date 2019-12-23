@@ -102,15 +102,9 @@ namespace eTrackApis.Controllers
         }
         private void SaveFiles(MeetingVm param)
         {
-            var relativePath = System.Configuration.ConfigurationManager.AppSettings["FilesPath"];
-            var basePath = "";
+            var relativePath = "~/Content/Meetings/";
 
-            if (relativePath == null)
-            {
-                relativePath = "~/Content/Meetings/";
-            }
-
-            basePath = HttpContext.Current.Server.MapPath(relativePath);
+            var basePath = HttpContext.Current.Server.MapPath(relativePath);
 
             var httpRequest = HttpContext.Current.Request;
             var i = 0;
@@ -120,24 +114,22 @@ namespace eTrackApis.Controllers
                 {
                     Directory.CreateDirectory(basePath);
                 }
-                foreach (string fileName in httpRequest.Files.Keys)
-                {
-                    var file = httpRequest.Files[fileName];
-                    var filename = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
-                    var filePath = basePath + filename;
-                    if (i == 0)
-                        param.PhotoPath = relativePath.Substring(1) + filename;
-                    //if (i == 1)
-                    //    param.PhotoPath1 = filePath;
-                    //if (i == 2)
-                    //    param.PhotoPath2 = filePath;
-                    //if (i == 3)
-                    //    param.PhotoPath3 = filePath;
-                    //if (i == 4)
-                    //    param.PhotoPath4 = filePath;
-                    i++;
-                    file.SaveAs(filePath);
-                }
+                var file = httpRequest.Files[0];
+                var filename = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                var filePath = basePath + filename;
+                if (i == 0)
+                    param.PhotoPath = relativePath.Substring(1) + filename;
+                //if (i == 1)
+                //    param.PhotoPath1 = filePath;
+                //if (i == 2)
+                //    param.PhotoPath2 = filePath;
+                //if (i == 3)
+                //    param.PhotoPath3 = filePath;
+                //if (i == 4)
+                //    param.PhotoPath4 = filePath;
+                i++;
+                file.SaveAs(filePath);
+
             }
         }
     }

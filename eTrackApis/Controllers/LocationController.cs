@@ -19,26 +19,6 @@ namespace eTrackApis.Controllers
 
             return Request.CreateResponse(new ResponseData(data));
         }
-
-        //public HttpResponseMessage Post(LocationPostVm param)
-        //{
-        //    if (param.Type == null)
-        //    {
-        //        param.Type = "I";
-        //    }
-        //    try
-        //    {
-        //        var data = db.UpsertLocation(param.CompCode, param.LocCode, param.CityCode,
-        //              param.LocName, param.Remarks, param.Status,
-        //              param.IP, param.CreatedBy, param.Type);
-                
-        //        return Request.CreateResponse(HttpStatusCode.Created, new ResponseData(data) { R = data > -1 ? "Y" : "N", Message = data.ToString() });
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.InnerException == null ? ex.Message : ex.InnerException.Message);
-        //    }
-        //}
     }
     
 }

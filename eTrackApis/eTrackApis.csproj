@@ -136,10 +136,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ChangePasswordController.cs" />
     <Compile Include="Controllers\DailyReportsController.cs" />
-    <Compile Include="Controllers\Meetings_LegacyController.cs" />
     <Compile Include="Controllers\BanksController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
-    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\GenerateNextNumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
@@ -161,8 +159,6 @@
     <Compile Include="ViewModels\ChangePasswordVm.cs" />
     <Compile Include="ViewModels\CityVm.cs" />
     <Compile Include="ViewModels\DailyReportVm.cs" />
-    <Compile Include="ViewModels\Helpers\HttpFile.cs" />
-    <Compile Include="ViewModels\Helpers\Logger.cs" />
     <Compile Include="ViewModels\LocationVm.cs" />
     <Compile Include="ViewModels\MeetingVm.cs" />
     <Compile Include="ViewModels\ProductVm.cs" />

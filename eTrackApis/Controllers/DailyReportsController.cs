@@ -23,10 +23,6 @@ namespace eTrackApis.Controllers
         {
             try
             {
-                if (Restriction.Is)
-                {
-                    return Request.CreateResponse(new ResponseData(null) { Message = "SCM_DAILY_REPORT." });
-                }
                 var conn = db.Database.Connection;
                 var dt = new DataTable();
                 conn.Open();
