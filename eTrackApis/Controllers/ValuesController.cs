@@ -21,6 +21,13 @@ namespace eTrackApis.Controllers
         {
             return new string[] { "value" };
         }
+
+        // GET api/values/1
+        public IEnumerable<string> Get(int id)
+        {
+            return new string[] { "value" };
+        }
+
         public void Post()
         {
         }

@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.Http;
 using eTrackApis.ViewModels;
 using eTrackModels.Models;
+using SqlToJsonConvertor;
 
 
 namespace eTrackApis.Controllers
@@ -24,37 +25,27 @@ namespace eTrackApis.Controllers
             try
             {
                 var conn = db.Database.Connection;
-                var dt = new DataTable();
-                conn.Open();
+                var parameters = new List<SqlParameter>();
+                parameters.Add(new SqlParameter("@P_COMP_CODE", param.CompCode));
+                parameters.Add(new SqlParameter("@P_CENT_CODE", param.CentCode ?? ""));
+                parameters.Add(new SqlParameter("@P_STATE_CODE", param.StateCode ?? ""));
+                parameters.Add(new SqlParameter("@P_CITY_CODE", param.CityCode ?? ""));
+                parameters.Add(new SqlParameter("@P_TYPE_CODE", param.TypeCode ?? ""));
+                parameters.Add(new SqlParameter("@P_SS_CODE", param.SSCode ?? ""));
+                parameters.Add(new SqlParameter("@P_DISTRIBUTOR_CODE", param.DistributerCode ?? ""));
+                parameters.Add(new SqlParameter("@PFROM_DATE", param.FromDate ?? ""));
+                parameters.Add(new SqlParameter("@PTO_DATE", param.ToDate ?? ""));
+                parameters.Add(new SqlParameter("@PTYPE", param.Type));
+                parameters.Add(new SqlParameter("@PUSER_ID", param.UserId ?? ""));
+                parameters.Add(new SqlParameter("@P_EXTRA", param.Extra ?? ""));
+                parameters.Add(new SqlParameter("@P_EXTRA1", param.Extra1 ?? ""));
+                parameters.Add(new SqlParameter("@P_EXTRA2", param.Extra2 ?? ""));
 
-                var cmd = conn.CreateCommand();
+                JsonConvertor convertor = new JsonConvertor(conn);
 
-                cmd.CommandText = "scm_daily_report";
-
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add(new SqlParameter("@P_COMP_CODE", param.CompCode));
-                cmd.Parameters.Add(new SqlParameter("@P_CENT_CODE", param.CentCode ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_STATE_CODE", param.StateCode ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_CITY_CODE", param.CityCode ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_TYPE_CODE", param.TypeCode ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_SS_CODE", param.SSCode ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_DISTRIBUTOR_CODE", param.DistributerCode ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@PFROM_DATE", param.FromDate ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@PTO_DATE", param.ToDate ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@PTYPE", param.Type));
-                cmd.Parameters.Add(new SqlParameter("@PUSER_ID", param.UserId ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_EXTRA", param.Extra ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_EXTRA1", param.Extra1 ?? ""));
-                cmd.Parameters.Add(new SqlParameter("@P_EXTRA2", param.Extra2 ?? ""));
-
-                using (var rdr = cmd.ExecuteReader())
-                {
-                    dt.Load(rdr);
-                }
-                conn.Close();
+                var result = convertor.ToJson("scm_daily_report", CommandType.StoredProcedure, parameters.ToArray());
                 
-                return Request.CreateResponse(new ResponseData(dt) { Message = "SCM_DAILY_REPORT" });
+                return Request.CreateResponse(new ResponseData(result) { Message = "SCM_DAILY_REPORT" });
             }
             catch (Exception ex)
             {

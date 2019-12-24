@@ -314,7 +314,7 @@ namespace eTrackModels.Models
         public virtual int UpsertShopkeeper(string pCOMP_CODE, string pSHOP_TYPE, string pDISTSHOP_NAME, string pSALES_C_CODE, string pSHOP_KEEP_CODE, string pSHOP_KEEP_NAME, string pSHOP_KEEP_NICK, string pADD1, string pCITY_CODE, string pADD2, string pLOCATION_CODE, string pEMAIL_ID, string pPHONE, string pMOBILE, string pREMARKS, string pSTATUS, Nullable<System.DateTime> pSTATUS_DATE, string pEXTRA1, string pEXTRA2, string pEXTRA3, string pEXTRA4, string pEXTRA5, string iP, string pUSERID, string pTYPE)
         {
             var pCOMP_CODEParameter = pCOMP_CODE != null ?
-                new ObjectParameter("PCOMP_CODE", pCOMP_CODE) :
+                new ObjectParameter("PCOMP_CODEE", pCOMP_CODE) :
                 new ObjectParameter("PCOMP_CODE", typeof(string));
     
             var pSHOP_TYPEParameter = pSHOP_TYPE != null ?

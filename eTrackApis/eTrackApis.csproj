@@ -227,6 +227,10 @@
       <Project>{0dde7e1e-0d30-4923-a51a-16dea4860e8c}</Project>
       <Name>eTrackModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SqlToJsonConvertor\SqlToJsonConvertor.csproj">
+      <Project>{aed75846-056e-405b-9b67-2a332b6820a2}</Project>
+      <Name>SqlToJsonConvertor</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
